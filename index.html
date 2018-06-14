@@ -4,7 +4,7 @@
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"> </script>
 <script src="https://rawgit.com/protyze/aframe-curve-component/master/dist/aframe-curve-component.min.js"></script>
 <script src="https://rawgit.com/protyze/aframe-alongpath-component/master/dist/aframe-alongpath-component.min.js"></script>
-
+<script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
 
 <body style='margin: 0px; overflow: hidden;'>
 	<!-- enable arjs on this scene -->
@@ -13,6 +13,10 @@
         <a-asset-item id="bb8" src="./assets/bb8.dae"></a-asset-item>
     </a-assets>
     <a-entity collada-model="#bb8"></a-entity>
+    <a-entity position="0 1 0"
+                animation-mixer="clip: *;"
+                gltf-model="src: url(https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/AnimatedMorphSphere/glTF/AnimatedMorphSphere.gltf);">
+    </a-entity>
 		<a-marker-camera preset='hiro'></a-marker-camera>
 	</a-scene>
 </body>
