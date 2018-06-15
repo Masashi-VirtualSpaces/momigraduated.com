@@ -22,8 +22,8 @@
     </a-marker>
   </a-scene>
   <script>
-    var targetEl = document.querySelector('#hat');
-    targetEl.addEventListener('click', function() {
+    var targetEl = document.querySelector('a-scene');
+    targetEl.addEventListener('touchstart', function() {
       targetEl.setAttribute('material', {color: 'red'});
     });
   </script>
