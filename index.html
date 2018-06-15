@@ -18,6 +18,7 @@
     </a-assets>
 		<a-marker preset='hiro' id="cap">
         <a-plane id="hat" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+        <a-entity template="#explosion"></a-entity>
     </a-marker>
     <a-entity camera> <a-cursor fuse="true" color="yellow"></a-cursor> </a-entity>
   </a-scene>
@@ -27,10 +28,12 @@
         var cap = document.querySelector('#cap')
         var test = document.querySelector("#hat")
         test.setAttribute('material', {color: 'red'});
+        /*
         var explosion = document.createElement('a-entity');
         explosion.setAttribute('id', 'template');
         explosion.setAttribute('template',"#explosion");
         cap.appendChild(explosion);
+        */
       });
     </script>
 </body>
