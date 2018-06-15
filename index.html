@@ -5,6 +5,7 @@
 <script src="https://rawgit.com/protyze/aframe-curve-component/master/dist/aframe-curve-component.min.js"></script>
 <script src="https://rawgit.com/protyze/aframe-alongpath-component/master/dist/aframe-alongpath-component.min.js"></script>
 <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
+<script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
 
 <body style='margin: 0px; overflow: hidden;'>
 	<!-- enable arjs on this scene -->
@@ -12,12 +13,12 @@
     <a-assets>
         <a-asset-item id="bb8" src="./assets/bb8.dae"></a-asset-item>
     </a-assets>
-
-    <a-entity position="0 0 0" scale="0.7 0.7 0.7"
+    <a-entity position="0 2.25 -15" particle-system="color: #EF0000,#44CC00"></a-entity>
+    <a-entity position="0 1 0" scale="0.3 0.3 0.3"
                 animation-mixer="clip: *;"
-                gltf-model="src:#bb8;">
+                gltf-model="src: url(https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/AnimatedMorphSphere/glTF/AnimatedMorphSphere.gltf);">
     </a-entity>
-		<a-marker-camera preset='hiro'></a-marker-camera>
+		<a-marker preset='hiro'></a-marker>
 	</a-scene>
 </body>
 </html>
