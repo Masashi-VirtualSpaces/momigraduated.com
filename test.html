@@ -26,11 +26,9 @@
 <a-box></a-box>
     </a-scene>
     <script>
-            var targetEl = document.querySelector("a-scene");
-            targetEl.addEventListener('touchstart', function() {
-                console.log("touch started");
-                var target = document.querySelector("#hat");
-              target.setAttribute('material', {color: 'red'});
+            var targetEl = document.querySelector('#hat');
+            targetEl.addEventListener('click', function() {
+              targetEl.setAttribute('material', {color: 'red'});
             });
           </script>
 </body>

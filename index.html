@@ -16,7 +16,13 @@
         <a-entity position="0 1 0" scale="0.2 0.2 0.2" size=0.5; particle-system="color: #EF0000,#44CC00;maxAge: 2; maxParticleCount: 25;"></a-entity>
         <a-box></a-box>
     </a-marker-camera>
+    <a-entity camera> <a-cursor fuse="true" color="yellow"></a-cursor> </a-entity>
   </a-scene>
-
+  <script>
+      var targetEl = document.querySelector('#hat');
+      targetEl.addEventListener('click', function() {
+        targetEl.setAttribute('material', {color: 'red'});
+      });
+    </script>
 </body>
 </html>
