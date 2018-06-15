@@ -6,23 +6,30 @@
 <script src="https://rawgit.com/protyze/aframe-alongpath-component/master/dist/aframe-alongpath-component.min.js"></script>
 <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
 <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
-
+<script src="https://unpkg.com/aframe-template-component@^3.2.1/dist/aframe-template-component.min.js"></script>
 <body style='margin: 0px; overflow: hidden;'>
-	<!-- enable arjs on this scene -->
+  <!-- enable arjs on this scene -->
+  <script id="explosion" type="text/html">
+    <a-entity position="0 1 0" scale="0.2 0.2 0.2" size=0.5; particle-system="color: #EF0000,#44CC00;maxAge: 2; maxParticleCount: 25;"></a-entity>
+  </script>
 	<a-scene embedded arjs='trackingMethod:best;'>
-
+ <a-entity position="0 1 0" scale="0.2 0.2 0.2" size=0.5; particle-system="color: #EF0000,#44CC00;maxAge: 2; maxParticleCount: 25;"></a-entity>
 		<a-marker preset='hiro' id="cap">
         <a-plane id="hat" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-        <a-entity position="0 1 0" scale="0.2 0.2 0.2" size=0.5; particle-system="color: #EF0000,#44CC00;maxAge: 2; maxParticleCount: 25;"></a-entity>
-        <a-box></a-box>
+       
     </a-marker>
     <a-entity camera> <a-cursor fuse="true" color="yellow"></a-cursor> </a-entity>
   </a-scene>
   <script>
       var targetEl = document.querySelector('#cap');
       targetEl.addEventListener('click', function() {
+        var cap = document.querySelector('#cap')
         var test = document.querySelector("#hat")
         test.setAttribute('material', {color: 'red'});
+        var explosion = document.createElement('a-entity');
+        explosion.setAttribute('id', 'template');
+        explosion.setAttribute('template',"#explosion");
+        cap.appendChild(explosion);
       });
     </script>
 </body>
