@@ -10,10 +10,11 @@
 <body style='margin: 0px; overflow: hidden;'>
 	<!-- enable arjs on this scene -->
 	<a-scene embedded arjs='sourceType: webcam;'>
-    <a-plane id="hat" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-    <a-entity position="0 1 0" scale="0.2 0.2 0.2" size=0.5; particle-system="color: #EF0000,#44CC00;maxAge: 2; maxParticleCount: 25;"></a-entity>
-    <a-box></a-box>
+
 		<a-marker-camera preset='hiro'>
+        <a-plane id="hat" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+        <a-entity position="0 1 0" scale="0.2 0.2 0.2" size=0.5; particle-system="color: #EF0000,#44CC00;maxAge: 2; maxParticleCount: 25;"></a-entity>
+        <a-box></a-box>
     </a-marker-camera>
   </a-scene>
 
