@@ -6,23 +6,34 @@
 <script src="https://rawgit.com/protyze/aframe-alongpath-component/master/dist/aframe-alongpath-component.min.js"></script>
 <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
 <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
-
+<script src="https://unpkg.com/aframe-template-component@^3.2.1/dist/aframe-template-component.min.js"></script>
 <body style='margin: 0px; overflow: hidden;'>
 	<!-- enable arjs on this scene -->
-	<a-scene embedded arjs='trackingMethod: tango;'>
-            <!-- Create a anchor to attach your augmented reality -->
-            <a-anchor hit-testing-enabled='true'>
-                <!-- Add your augmented reality here -->
-                <a-box position='0 0.5 0' material='opacity: 0.5; side:double; color:red;'>
-                    <a-torus-knot radius='0.26' radius-tubular='0.05'>
-                        <a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
-                    </a-torus-knot>
-                </a-box>
-            </a-anchor>
-            <!-- Define a static camera -->
-            <a-camera-static/>
-        </a-scene>
+	<a-scene >
+        <a-assets>
+            <script id="explosion" type="text/html">
+                <a-entity position="0 1 0" scale="0.2 0.2 0.2" size=0.05; particle-system="color: #EF0000,#44CC00;maxAge: 2; maxParticleCount: 25;"></a-entity>
+            </script>
+        </a-assets>
+            <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow></a-sphere>
+            <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
+            <a-plane id="cap" position="0 0 0" scale="0.5 0.5 0.5" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
+            <a-sky color="#ECECEC"></a-sky>
 
+            <a-entity camera camera wasd-controls look-controls position="0 2 0"> <a-cursor fuse="false" color="yellow"></a-cursor> </a-entity>
+           
+    </a-scene>
+    <script>
+            var targetEl = document.querySelector('#cap');
+            targetEl.addEventListener('click', function() {
+              var cap = document.querySelector('a-scene');
+              var test = document.querySelector("#cap");
+              test.setAttribute('material', {color: 'red'});
+              var explosion = document.createElement('a-entity');
+              explosion.setAttribute('template',"src:#explosion");
+              cap.appendChild(explosion);
+            });
+          </script>
 </body>
 
 </html>
