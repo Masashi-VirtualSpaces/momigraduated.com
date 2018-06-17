@@ -27,9 +27,19 @@
         var cap = document.querySelector('#hat')
         var test = document.querySelector("#hat")
         test.setAttribute('material', {color: 'red'});
-        var explosion = document.createElement('a-entity');
+        var explosion1 = document.createElement('a-entity');
+        explosion1.setAttribute('template',"src:#explosion");
+       
+        var explosion2 = document.createElement('a-entity');
+        explosion2.setAttribute('template',"src:#explosion");
+        explision2.setAttribute('pos','0 1 3.5');
+        cap.appendChild(explosion2);
+        
+        var explosion3 = document.createElement('a-entity');
         explosion.setAttribute('template',"src:#explosion");
-        cap.appendChild(explosion);
+        explision2.setAttribute('pos','0.5 -1 3.5');
+        cap.appendChild(explosion3);
+
       });
     </script>
 </body>
