@@ -1,5 +1,6 @@
 <!doctype HTML>
 <html>
+  <head>
 <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"> </script>
 <script src="https://rawgit.com/protyze/aframe-curve-component/master/dist/aframe-curve-component.min.js"></script>
@@ -8,10 +9,12 @@
 <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
 <script src="https://unpkg.com/aframe-template-component@^3.2.1/dist/aframe-template-component.min.js"></script>
 <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script> 
+</head>
 <body style='margin: 0px; overflow: hidden;'>
+
   <!-- enable arjs on this scene -->
 
-	<a-scene embedded arjs='trackingMethod:best;'>
+	<a-scene embedded arjs='trackingMethod:best; debugUIEnabled: false;'>
     <a-assets>
         <script id="explosion" type="text/html">
           <a-entity rotation="90 0 0" position="0 0 3" scale="0.2 0.2 0.2" particle-system="color: #EF0000,#44CC00; maxAge: 2; maxParticleCount: 25; size:0.25; positionSpread:{0.2 0.2 0.2}; velocityValue:{0 5 0}";></a-entity>
