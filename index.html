@@ -22,11 +22,15 @@
         <script id="text" type="text/html">
         <a-entity visible="false" text-geometry="value:I GRADUATED!;font:https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json;weight:bold;bevelSize:1;bevelThickness:0.5" material="color: red" position="-2.540077459050863 1.3523075091421737 0"></a-entity>
         </script>
+
+        <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
     </a-assets>
 		<a-marker preset='hiro' id="cap" scale="0.5 0.5 0.5">
         <a-plane id="hat" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" scale="0.5 0.5 0.5"></a-plane>
     </a-marker>
     <a-entity camera> <a-cursor fuse="false" color="yellow"></a-cursor> </a-entity>
+
+    
   </a-scene>
   <script>
       var targetEl = document.querySelector('#hat');
