@@ -6,24 +6,35 @@
 <body>
   <h1>Move to Oregon</h1>
   <div id="clockdiv">
-    <div>
-      <span class="days"></span>
-      <div class="smalltext">Days</div>
-    </div>
-    <div>
-      <span class="hours"></span>
-      <div class="smalltext">Hours</div>
-    </div>
-    <div>
-      <span class="minutes"></span>
-      <div class="smalltext">Minutes</div>
-    </div>
-    <div>
-      <span class="seconds"></span>
-      <div class="smalltext">Seconds</div>
-    </div>
-  </div>
-
+  <table>
+    <tr>
+      <td>
+          <div>
+              <span class="days"></span>
+              <div class="smalltext">Days</div>
+            </div>
+      </td>
+    <td>
+        <div>
+            <span class="hours"></span>
+            <div class="smalltext">Hours</div>
+          </div>
+    </td>
+    <td>
+        <div>
+            <span class="minutes"></span>
+            <div class="smalltext">Minutes</div>
+          </div>
+    </td>
+    <td>
+        <div>
+            <span class="seconds"></span>
+            <div class="smalltext">Seconds</div>
+          </div>
+    </td>
+    </tr>
+  </table>
+</div>
   <script>
     function getTimeRemaining(endtime) {
       var t = Date.parse(endtime) - Date.parse(new Date());
